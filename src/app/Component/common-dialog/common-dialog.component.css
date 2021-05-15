@@ -1,0 +1,42 @@
+.dialog-layout {
+    width: 385px;
+    height: 295px;
+    position: relative;
+}
+.text-area {
+    width: 240px;
+    /* margin-top: 30px; */
+    height: 58px;
+    text-align: center;
+    /* margin-left: 20%;
+    margin-right: 20%; */
+}
+.text-field {
+    width: 100%;
+    height: 90px;
+    text-align: center;
+}
+.text-style {
+    margin: 0;
+    font-size: 21px;
+}
+.btn-style {
+    margin: 10px;
+    width: 100px;
+}
+.btn-lyt {
+    margin-top: 25px;
+    /* padding: 13px; */
+    width: 240px;
+    margin-left: 73px;
+}
+.delete-lyt {
+    height: 110px;
+    width: 500px;
+}
+.btn-lyt-delete {
+    width: 200px;
+    height: 50px;
+    margin-top: 21px;
+    margin-left: 323px;
+}

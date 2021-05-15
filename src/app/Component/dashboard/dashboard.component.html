@@ -1,0 +1,60 @@
+<div class="body-layout">
+  <mat-card class="form-box">
+    <div>
+      <div class="button-box">
+        <button mat-button class="button-style" (click)="loginClicked()">
+          Login
+        </button>
+        <button mat-button class="button-style" (click)="registerClicked()">
+          Register
+        </button>
+      </div>
+      <div class="form-layout">
+        <div *ngIf="isLogin">
+          <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+            <mat-form-field appearance="outline" class="text-area">
+              <mat-label>Email or Username</mat-label>
+              <input matInput [formControlName]="'email'" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="text-area">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput [formControlName]="'password'" />
+            </mat-form-field>
+            <button
+              mat-raised-button
+              color="primary"
+              [disabled]="loginForm.invalid"
+              class="btn-success"
+            >
+              Login
+            </button>
+            <div class="error-alert" *ngIf="alertMgs != null">
+              {{ alertMgs }}
+            </div>
+          </form>
+        </div>
+        <div *ngIf="isRegister">
+          <form (ngSubmit)="onRegister()" [formGroup]="registerForm">
+            <mat-form-field appearance="outline" class="text-area">
+              <mat-label>Email or Username</mat-label>
+              <input matInput [formControlName]="'email'" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="text-area">
+              <mat-label>Mobile</mat-label>
+              <input matInput [formControlName]="'mobile'" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="text-area">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput [formControlName]="'password'" />
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="btn-success">
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,29 @@
+.tool-bar {
+    width: 100vw;
+    height: 60px;
+    background-color: grey;
+}
+.logoff-btn {
+    margin-left: 88%;
+    margin-top: 1%;
+}
+.data-table {
+    /* height: 450px; */
+    width: 60%;
+    position: relative;
+    margin: 3% auto;
+    background: transparent;
+}
+.table {
+    width: 100%;
+    /* height: 300px; */
+    border-style: double;
+}
+.table-header {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+}
+.table-row {
+    text-align: center;
+}
