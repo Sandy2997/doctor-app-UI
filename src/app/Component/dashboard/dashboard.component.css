@@ -1,0 +1,60 @@
+.body-layout {
+    height: 100vh;
+    width: 100vw;
+    background: url(../../../assets/images/login-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+.form-box {
+    height : 450px;
+    width: 380px;
+    position: relative;
+    margin: 6% auto;
+    background: #ffffff4a;
+    padding: 5px;   
+}
+.button-box {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 25px rgba(127, 129, 236, 0.377);
+    /* background: rgb(199 190 190); */
+}
+.button-style {
+    font-weight: 500;
+    font-size: 20px;
+    font-family: 'Roboto';
+    background: transparent;
+    width: 110px;
+}
+.form-layout {
+    width: 380px;
+    height: 300px;
+    background: transparent;
+    position: relative;
+}
+.text-area {
+    width: 240px;
+    margin-top: 30px;
+    height: 30px;
+    text-align: center;
+    margin-left: 17%;
+    margin-right: 20%;
+}
+.btn-success {
+    width: 50%;
+    margin-top: 10%;
+    margin-left: 23%;
+    height: 40px;
+    background-color: #d9a45b;
+}
+.error-alert {
+    margin-top: 30px;
+    /* margin-left: 73px; */
+    text-align: center;
+    font-size: 20px;
+    font-family: cursive;
+    color: red;
+}
