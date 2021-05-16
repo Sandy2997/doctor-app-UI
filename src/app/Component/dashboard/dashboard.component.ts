@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/Service/login.service';
 
 
 @Component({
@@ -15,20 +16,11 @@ export class DashboardComponent implements OnInit {
   isLogin = false;
   isRegister = false;
   loginSuccessfull = false;
-  loginCredientials = [
-    {
-      username: "santhosh",
-      password: "12345"
-    },
-    {
-      username: "saravanan",
-      password: "123456"
-    }
-  ]
   
   constructor(
     private route: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private loginService: LoginService
   ) { 
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
@@ -58,19 +50,19 @@ export class DashboardComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
-      console.log(this.loginCredientials);
-      this.loginCredientials.forEach(cred => {
-        if (cred.username == this.loginForm.value.email && cred.password == this.loginForm.value.password) {
-          this.loginSuccessfull = true;
-        }
-      });
+      this.loginService.getUserDetails().subscribe(users => 
+        users.filter(cred => {
+          if (cred.username == this.loginForm.value.email && cred.password == this.loginForm.value.password) {
+            this.loginSuccessfull = true;
+          }
+        }));
       if (this.loginSuccessfull) {
         localStorage.setItem('loggedUser', this.loginForm.value.email);
         this.route.navigateByUrl('details');
       }
       else {
         this.alertMgs = "Login Credentials Invalid!";
-        this.loginForm.value.clear();
+        this.loginForm.reset();
       }
     }
     else {
